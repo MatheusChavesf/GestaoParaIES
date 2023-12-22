@@ -2,17 +2,65 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div>
-    <h1>Bem-vindo(a) ao Gestão Proff</h1>
-    <p>Explore o sistema de gestão de alunos.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #c0c0c0; /* Cinza médio (aproximadamente 25%) */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <a asp-action="Aluno" asp-controller="Home" class="btn btn-primary">Alunos</a>
-    <a asp-action="Professor" asp-controller="Home" class="btn btn-primary">Professores</a>
-    <a asp-action="Disciplina" asp-controller="Home" class="btn btn-primary">Disciplinas</a>
-    <a asp-action="Curso" asp-controller="Home" class="btn btn-primary">Cursos</a>
-    <a asp-action="Avaliacao" asp-controller="Home" class="btn btn-primary">Avaliações</a>
-    <a asp-action="Certificado" asp-controller="Home" class="btn btn-primary">Certificados</a>
-    <a asp-action="Mensalidade" asp-controller="Home" class="btn btn-primary">Mensalidades</a>
-    <a asp-action="Presenca" asp-controller="Home" class="btn btn-primary">Presença</a>
-    <a asp-action="Turma" asp-controller="Home" class="btn btn-primary">Turma</a>
-</div>
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .btn-group-vertical {
+            margin-top: 20px; /* Espaço acima dos botões */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            margin-bottom: 10px; /* Espaço abaixo de cada botão */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Bem-vindo(a) ao Gestão Proff</h1>
+        <p>Explore o sistema de gestão de alunos.</p>
+
+        <div class="btn-group-vertical">
+            <a asp-action="Aluno" asp-controller="Home" class="btn btn-primary">Alunos</a>
+            <a asp-action="Professor" asp-controller="Home" class="btn btn-primary">Professores</a>
+            <a asp-action="Disciplina" asp-controller="Home" class="btn btn-primary">Disciplinas</a>
+            <a asp-action="Curso" asp-controller="Home" class="btn btn-primary">Cursos</a>
+            <a asp-action="Avaliacao" asp-controller="Home" class="btn btn-primary">Avaliações</a>
+            <a asp-action="Certificado" asp-controller="Home" class="btn btn-primary">Certificados</a>
+            <a asp-action="Mensalidade" asp-controller="Home" class="btn btn-primary">Mensalidades</a>
+            <a asp-action="Presenca" asp-controller="Home" class="btn btn-primary">Presença</a>
+            <a asp-action="Turma" asp-controller="Home" class="btn btn-primary">Turma</a>
+        </div>
+    </div>
+
+</body>
+</html>
