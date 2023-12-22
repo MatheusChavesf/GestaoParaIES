@@ -1,0 +1,66 @@
+﻿@model GestaoProffff.Models.ProfessorModel
+
+@{
+    ViewData["Title"] = "Adicionar Professor";
+}
+
+<h1>Adicionar Professor</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdicionarProfessor" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Campo IDProfessor oculto -->
+            <div class="form-group" style="display: none;">
+                <label asp-for="IDProfessor" class="control-label"></label>
+                <input asp-for="IDProfessor" class="form-control" />
+                <span asp-validation-for="IDProfessor" class="text-danger"></span>
+            </div>
+
+            <!-- Campo NomeProfessor -->
+            <div class="form-group">
+                <label asp-for="NomeProfessor" class="control-label"></label>
+                <input asp-for="NomeProfessor" class="form-control" />
+                <span asp-validation-for="NomeProfessor" class="text-danger"></span>
+            </div>
+
+            <!-- Campo MatriculaProfessor -->
+            <div class="form-group">
+                <label asp-for="MatriculaProfessor" class="control-label"></label>
+                <input asp-for="MatriculaProfessor" class="form-control" />
+                <span asp-validation-for="MatriculaProfessor" class="text-danger"></span>
+            </div>
+
+            <!-- Campo DataNascimento -->
+            <div class="form-group">
+                <label asp-for="DataNascimento" class="control-label"></label>
+                <input asp-for="DataNascimento" class="form-control" />
+                <span asp-validation-for="DataNascimento" class="text-danger"></span>
+            </div>
+
+            <!-- Campo DisciplinaMinistrada -->
+            <div class="form-group">
+                <label asp-for="DisciplinaMinistrada" class="control-label"></label>
+                <input asp-for="DisciplinaMinistrada" class="form-control" />
+                <span asp-validation-for="DisciplinaMinistrada" class="text-danger"></span>
+            </div>
+
+            <!-- Botão para submeter o formulário -->
+            <div class="form-group">
+                <input type="submit" value="Adicionar Professor" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a Lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

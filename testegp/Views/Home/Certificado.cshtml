@@ -1,0 +1,48 @@
+﻿@model IEnumerable<GestaoProffff.Models.CertificadoModel>
+
+@{
+    ViewData["Title"] = "Certificados";
+}
+
+<h1>Certificados</h1>
+
+<p>
+    <a asp-action="AdicionarCertificado" class="btn btn-success">Adicionar novo certificado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataEmissao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlunoAssociado.NomeAluno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Tipo)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.DataEmissao)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.AlunoAssociado.NomeAluno)
+                    </td>
+                    <td>
+                        <a asp-action="EditarCertificado" asp-route-id="@item.IDCertificado" class="btn btn-primary">Editar</a> |
+                        <a asp-action="DetalhesCertificado" asp-route-id="@item.IDCertificado" class="btn btn-info">Detalhes</a> |
+                        <a asp-action="ExcluirCertificado" asp-route-id="@item.IDCertificado" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

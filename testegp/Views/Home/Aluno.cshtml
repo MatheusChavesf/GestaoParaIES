@@ -1,0 +1,60 @@
+﻿@model IEnumerable<GestaoProffff.Models.AlunoModel>
+
+@{
+    ViewData["Title"] = "Aluno";
+}
+
+<h1>Aluno</h1>
+
+<p>
+    <a asp-action="AdicionarAluno" class="btn btn-success">Adicionar novo aluno</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MatriculaAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CursoAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefoneAluno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.MatriculaAluno)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.NomeAluno)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.EmailAluno)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.CursoAluno)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.TelefoneAluno)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IDAluno" class="btn btn-primary">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.IDAluno" class="btn btn-info">Detalhes</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IDAluno" class="btn btn-danger">Deletar</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>

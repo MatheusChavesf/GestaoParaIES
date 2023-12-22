@@ -1,0 +1,76 @@
+﻿@model GestaoProffff.Models.AvaliacaoModel
+
+@{
+    ViewData["Title"] = "CriarAvaliacao";
+}
+
+<h1>Criar Avaliação</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="CriarAvaliacao" method="post" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="IDAvaliacao" class="control-label col-md-3">ID Avaliação</label>
+                <div class="col-md-6">
+                    <input asp-for="IDAvaliacao" class="form-control" />
+                    <span asp-validation-for="IDAvaliacao" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label col-md-3">Nome da Avaliação</label>
+                <div class="col-md-6">
+                    <input asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Nota" class="control-label col-md-3">Nota</label>
+                <div class="col-md-6">
+                    <input asp-for="Nota" class="form-control" />
+                    <span asp-validation-for="Nota" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AlunoAssociadoID" class="control-label col-md-3">Aluno</label>
+                <div class="col-md-6">
+                    <select asp-for="AlunoAssociadoID" asp-items="@(Model.AlunosDisponiveis.Select(a => new SelectListItem { Value = a.IDAluno.ToString(), Text = a.NomeAluno }))" class="form-control">
+                        <option value="">Selecione um aluno</option>
+                    </select>
+                    <span asp-validation-for="AlunoAssociadoID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DisciplinaAssociadaID" class="control-label col-md-3">Disciplina</label>
+                <div class="col-md-6">
+                    <select asp-for="DisciplinaAssociadaID" asp-items="@(Model.DisciplinasDisponiveis.Select(d => new SelectListItem { Value = d.IDDisciplina.ToString(), Text = d.NomeDisciplina }))" class="form-control">
+                        <option value="">Selecione uma disciplina</option>
+                    </select>
+                    <span asp-validation-for="DisciplinaAssociadaID" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-6">
+                    <button type="submit" class="btn btn-primary">Lançar Nota</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-3">
+    <a asp-action="Avaliacao">Voltar para a Lista de Avaliações</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

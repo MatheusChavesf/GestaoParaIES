@@ -1,0 +1,41 @@
+﻿@model IEnumerable<GestaoProffff.Models.AlunoModel>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">a
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MatriculaAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAluno)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatriculaAluno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeAluno)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<GestaoProffff.Models.ProfessorModel>
+
+@{
+    ViewData["Title"] = "Professor";
+}
+
+<h1>Professor</h1>
+
+<p>
+    <a asp-action="AdicionarProfessor" class="btn btn-success">Adicionar novo professor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDProfessor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeProfessor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MatriculaProfessor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataNascimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisciplinaMinistrada)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDProfessor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeProfessor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatriculaProfessor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisciplinaMinistrada)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

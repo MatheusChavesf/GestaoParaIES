@@ -1,0 +1,73 @@
+﻿@model GestaoProffff.Models.AlunoModel
+
+@{
+    ViewData["Title"] = "Adicionar Aluno";
+}
+
+<h1>Adicionar Aluno</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AdicionarAluno" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Campo IDAluno oculto -->
+            <div class="form-group" style="display: none;">
+                <label asp-for="IDAluno" class="control-label"></label>
+                <input asp-for="IDAluno" class="form-control" />
+                <span asp-validation-for="IDAluno" class="text-danger"></span>
+            </div>
+
+            <!-- Campo MatriculaAluno visível após ser gerado aleatoriamente -->
+            <div class="form-group">
+                <label asp-for="MatriculaAluno" class="control-label"></label>
+                <input asp-for="MatriculaAluno" class="form-control" readonly />
+                <span asp-validation-for="MatriculaAluno" class="text-danger"></span>
+            </div>
+
+            <!-- Campo NomeAluno -->
+            <div class="form-group">
+                <label asp-for="NomeAluno" class="control-label"></label>
+                <input asp-for="NomeAluno" class="form-control" />
+                <span asp-validation-for="NomeAluno" class="text-danger"></span>
+            </div>
+
+            <!-- Campo EmailAluno -->
+            <div class="form-group">
+                <label asp-for="EmailAluno" class="control-label"></label>
+                <input asp-for="EmailAluno" class="form-control" />
+                <span asp-validation-for="EmailAluno" class="text-danger"></span>
+            </div>
+
+            <!-- Campo TelefoneAluno -->
+            <div class="form-group">
+                <label asp-for="TelefoneAluno" class="control-label"></label>
+                <input asp-for="TelefoneAluno" class="form-control" />
+                <span asp-validation-for="TelefoneAluno" class="text-danger"></span>
+            </div>
+
+            <!-- Campo CursoAluno -->
+            <div class="form-group">
+                <label asp-for="CursoAluno" class="control-label"></label>
+                <input asp-for="CursoAluno" class="form-control" />
+                <span asp-validation-for="CursoAluno" class="text-danger"></span>
+            </div>
+
+            <!-- Botão para submeter o formulário -->
+            <div class="form-group">
+                <input type="submit" value="Adicionar Aluno" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar para a Lista</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

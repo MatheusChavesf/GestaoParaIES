@@ -1,0 +1,54 @@
+﻿@model IEnumerable<GestaoProffff.Models.PresencaModel>
+
+@{
+    ViewData["Title"] = "Presença";
+}
+
+<h1>Presença</h1>
+
+<p>
+    <a asp-action="AdicionarPresenca" class="btn btn-success">Adicionar Falta</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDPresenca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlunoPresente.NomeAluno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Disciplina.NomeDisciplina)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.IDPresenca)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.AlunoPresente.NomeAluno)
+                    </td>
+                    <td>
+                    @Html.DisplayFor(modelItem => item.Disciplina.NomeDisciplina)
+                    </td>
+                    <td>
+                        <a asp-action="EditarPresenca" asp-route-id="@item.IDPresenca" class="btn btn-primary">Editar</a> |
+                        <a asp-action="DetalhesPresenca" asp-route-id="@item.IDPresenca" class="btn btn-info">Detalhes</a> |
+                        <a asp-action="ExcluirPresenca" asp-route-id="@item.IDPresenca" class="btn btn-danger">Deletar</a>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
