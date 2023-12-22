@@ -22,7 +22,6 @@
 
   <ItemGroup>
     <Folder Include="DBContext\" />
-    <Folder Include="Testes\Features\" />
   </ItemGroup>
 
 </Project>
