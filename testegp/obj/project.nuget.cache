@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lgL/wW1JAt/ZaF89K00timI6+gDwKUO5ewpXlj0KVRMwOwmS+iJ4WmVdmueiemm8ANBxbgHVZ1Z1D72RFjTAAw==",
+  "dgSpecHash": "j9VXkKSC/RKZGW+tGgCqauoAova5S875pk1+GWtSG5oPXRMnWuyqWZncsZucKWr9S2LGYg490Erqt2wVUaLhZg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matheus.chaves\\source\\repos\\testegp\\testegp\\GestaoProffff.csproj",
+  "projectFilePath": "C:\\Users\\matheus.chaves\\source\\repos\\GestaoParaIES\\testegp\\GestaoProffff.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matheus.chaves\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\matheus.chaves\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

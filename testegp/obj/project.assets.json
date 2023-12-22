@@ -11263,11 +11263,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matheus.chaves\\source\\repos\\testegp\\testegp\\GestaoProffff.csproj",
+      "projectUniqueName": "C:\\Users\\matheus.chaves\\source\\repos\\GestaoParaIES\\testegp\\GestaoProffff.csproj",
       "projectName": "GestaoProffff",
-      "projectPath": "C:\\Users\\matheus.chaves\\source\\repos\\testegp\\testegp\\GestaoProffff.csproj",
+      "projectPath": "C:\\Users\\matheus.chaves\\source\\repos\\GestaoParaIES\\testegp\\GestaoProffff.csproj",
       "packagesPath": "C:\\Users\\matheus.chaves\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matheus.chaves\\source\\repos\\testegp\\testegp\\obj\\",
+      "outputPath": "C:\\Users\\matheus.chaves\\source\\repos\\GestaoParaIES\\testegp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
